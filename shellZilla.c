@@ -40,7 +40,11 @@ char *supCmd[] =
     NULL
 };
 
+<<<<<<< HEAD
 /*command explanation*/
+=======
+/*commands explaination*/
+>>>>>>> 5cf3b24ca4f4b2c182caa3300a1fea9bbefee0a0
 char *supCmdExplain[] = 
 {
     "show current working directory.",
@@ -100,6 +104,7 @@ void funShellZillaReadLineIni()
     return;
 }
 
+
 /*get current folder name*/
 void funShellZillaGetCurFolder(char *pCwd, char *curFolder)
 {
@@ -116,6 +121,7 @@ void funShellZillaGetCurFolder(char *pCwd, char *curFolder)
     memcpy(curFolder, p+1, len);
     return;
 }
+
 
 char *funShellZillaGetRidOfSpace(char *input)
 {
@@ -216,7 +222,15 @@ void funShellZillaParse(char *input, char **argv)
     return;
 }
 
-
+/*get current directory,the same as pwd command in bash*/
+void funShellZillaExcCurDir(char **argv)
+{
+    char cwd[PATH_LEN_MAX];
+    memset(cwd, 0, sizeof(cwd));
+    getcwd(cwd, sizeof(cwd));
+    printf("%s\n", cwd);
+    return;
+}
 
 int main()
 {
