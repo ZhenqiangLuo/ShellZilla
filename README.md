@@ -20,6 +20,7 @@ Zhenqiang Luo
 Usage
 --------------------------
 
-Enter the following command to run shellZilla
+Enter the following commands to run shellZilla
 
+make
 ./shellZilla
