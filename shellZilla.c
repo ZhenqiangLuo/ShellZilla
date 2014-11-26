@@ -293,6 +293,54 @@ void funShellZillaExcBuiltInBash(char **argv)
 }
 
 
+/*uniq funtion for command excution*/
+void funShellZillaExc(char **argv)
+{
+    char cmdStr[1024];
+    if(!strcmp(*argv, "currentdir"))
+    {
+        funShellZillaExcCurDir(argv);
+    }
+
+    if(!strcmp(*argv, "ver"))
+    {
+        funShellZillaExcVer(argv);
+    }
+
+    if(!strcmp(*argv, "commands"))
+    {
+        funShellZillaExcCmd(argv);
+    }
+
+    if(!strcmp(*argv, "history"))
+    {
+        funShellZillaExcHis(argv);
+    }
+
+    if(!strcmp(*argv, "ls") 
+        || !strcmp(*argv, "mkdir")
+        || !strcmp(*argv, "rmdir"))
+    {
+        /*built-in function in bash*/
+        funShellZillaExcBuiltInBash(argv);
+    }
+
+    if(!strcmp(*argv, "cd"))
+    {
+        chdir(argv[1]);
+    }
+    return;
+}
+
+void funShellZillaPrintWelCome()
+{
+    printf("\r\n**********************************************************************\n");
+    printf("*********************WelCome to Shell Zilla***************************\n");
+    printf("**********************************************************************\n");
+    return;
+}
+
+
 int main()
 {
     char shellPrompt[PROMPT_LEN_MAX];
