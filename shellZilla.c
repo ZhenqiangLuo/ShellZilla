@@ -136,14 +136,14 @@ int main()
     char *userInput = NULL;
     char curFolder[64];
     char *inputWithNoSpace = NULL;
-    char cmd[PROMPT_LEN_MAX];
-    char param[PROMPT_LEN_MAX];
+    char *argv[64];
 
+    memset(&history, 0, sizeof(history));
     /*init the completion function*/
     funShellZillaReadLineIni();
-
     /*set the command history count to 10*/
     stifle_history(SHELL_HIS_CMD_CNT_MAX);
+    funShellZillaPrintWelCome();
     while(1)
     {
         memset(cwd, 0, sizeof(cwd));
@@ -169,6 +169,7 @@ int main()
 
         /*add the command to history*/
         add_history(inputWithNoSpace);
+        funShellZillaAddHistoryList(inputWithNoSpace);
         if(!funShellZillaIsValidCmd(inputWithNoSpace))
         {
             /*if command not supported,print warning info*/
@@ -178,21 +179,20 @@ int main()
             continue;
         }
 
-        memset(cmd, 0, PROMPT_LEN_MAX);
-        memset(param, 0, PROMPT_LEN_MAX);
         /*parse the input,get the command name and the parameter*/
-        funShellZillaParse(inputWithNoSpace, cmd, param);
-        if(!strcmp(cmd, "quit"))
+        funShellZillaParse(inputWithNoSpace, argv);
+        if(!strcmp(*argv, "quit"))
         {
             free(userInput);
             userInput = NULL;
             break;
         }
         /*excute the command*/
-        funShellZillaExc(cmd, param);
+        funShellZillaExc(argv);
 
         free(userInput);
         userInput = NULL;
     }
+    funShellZillaHistoryListFree();
     return OK;
 }
