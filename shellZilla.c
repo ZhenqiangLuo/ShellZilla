@@ -192,6 +192,39 @@ int funShellZillaIsValidCmd(char *input)
 
 
 
+/*according to input,get the command name and parameter*/
+void funShellZillaParse(char *input, char **argv)
+{
+    char *p = NULL;
+
+    p = input;
+    while (*p != '\0')
+    {
+        while ((*p == ' ') 
+            || (*p == '\t') 
+            || (*p == '\n')) 
+        {
+            /*if white space,tab,or newline encountered，one command finish*/
+            *p = '\0';
+            p++;
+        }
+        // save the position of argument
+        *argv = p;
+        argv++;
+        while((*p != '\0' )
+                && (*p != ' ') 
+                && (*p != '\t') 
+                && (*p != '\n'))
+        {
+            p++;
+        }
+    }
+    *argv = (char *) '\0';    
+    return;
+}
+
+
+
 int main()
 {
     char shellPrompt[PROMPT_LEN_MAX];
