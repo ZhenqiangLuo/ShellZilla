@@ -31,7 +31,19 @@ char *supCmd[] =
     NULL
 };
 
-
+char *supCmdExplain[] = 
+{
+    "show current working directory.",
+    "show the version, feature description, athor and so on.",
+    "built-in command ls in bash.",
+    "change diretory.",
+    "built-in command mkdir in bash.",
+    "built-in command rmdir in bash.",
+    "show all the commands that shellzilla support.",
+    "show the history commands",
+    "quit shellzilla.",
+    NULL
+};
 
 int main()
 {
