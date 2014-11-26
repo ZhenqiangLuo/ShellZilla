@@ -83,6 +83,14 @@ char** funShellZillaCmdCompletion(const char* text, int start, int end)
     return matches;
 }
 
+void funShellZillaReadLineIni()
+{
+    rl_readline_name = "ShellZilla";
+    rl_attempted_completion_function = funShellZillaCmdCompletion;
+    return;
+}
+
+
 
 int main()
 {
