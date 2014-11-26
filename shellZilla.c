@@ -468,3 +468,4 @@ int main()
     funShellZillaHistoryListFree();
     return OK;
 }
+#endif
