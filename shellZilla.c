@@ -32,6 +32,28 @@ void funShellZillaGetCurFolder(char *pCwd, char *curFolder)
     return;
 }
 
+char *funShellZillaGetRidOfSpace(char *input)
+{
+    char *p = NULL;
+    char *q = NULL;
+
+    p = input;
+    /*find the first char that is not whitespace*/
+    while(*p == ' ')
+    {
+        p++;
+    }
+
+    /*get rid of the white space at the end*/
+    q = input+strlen(input)-1;
+    while(*q == ' ')
+    {
+        q--;
+    }
+    q++;
+    *q = '\0';
+    return p;
+}
 
 int main()
 {
