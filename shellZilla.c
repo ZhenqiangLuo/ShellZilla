@@ -100,10 +100,7 @@ void funShellZillaReadLineIni()
     return;
 }
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 8028d38f7741ba43d8817c08cd2dfe41ebfee540
 /*get current folder name*/
 void funShellZillaGetCurFolder(char *pCwd, char *curFolder)
 {
@@ -220,7 +217,15 @@ void funShellZillaParse(char *input, char **argv)
     return;
 }
 
-
+/*get current directory,the same as pwd command in bash*/
+void funShellZillaExcCurDir(char **argv)
+{
+    char cwd[PATH_LEN_MAX];
+    memset(cwd, 0, sizeof(cwd));
+    getcwd(cwd, sizeof(cwd));
+    printf("%s\n", cwd);
+    return;
+}
 
 int main()
 {
