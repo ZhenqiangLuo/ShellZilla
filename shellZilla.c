@@ -232,6 +232,7 @@ void funShellZillaExcCurDir(char **argv)
     return;
 }
 
+<<<<<<< HEAD
 void funShellZillaExcBuiltInBash(char **argv)
 {
     pid_t pid;
@@ -261,6 +262,26 @@ void funShellZillaExcBuiltInBash(char **argv)
     return;
 }
 
+=======
+
+/*funtion for command commands*/
+void funShellZillaExcCmd(char **argv)
+{
+    int index = 0;
+    char *p = NULL;
+
+    printf("\r\nthe following commands supported:\n");
+    while(supCmd[index] != NULL)
+    {
+        printf("%s: %s\n", supCmd[index], supCmdExplain[index]);
+        index++;
+    }
+    printf("\r\n");
+    return;
+}
+
+
+>>>>>>> 00a168304f2527cb0d9ef07da370a2ddabbb5bf6
 int main()
 {
     char shellPrompt[PROMPT_LEN_MAX];
