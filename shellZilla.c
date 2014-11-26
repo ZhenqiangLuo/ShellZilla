@@ -147,7 +147,7 @@ char *funShellZillaGetRidOfSpace(char *input)
 void funShellZillaExcVer(char **argv)
 {
     printf("\r\n**********************************************************************\n");
-    printf("**************************SHELL ZILLA*********************************\n");
+    printf("**************************ShellZilla*********************************\n");
     printf("**********************************************************************\n");
     printf("*current version    : 2.1                                            *\n");
     printf("*feature description: 1.recording 10 history commands                *\n");
@@ -336,9 +336,12 @@ void funShellZillaExc(char **argv)
 
 void funShellZillaPrintWelCome()
 {
+	printf("\n\n\n");
     printf("\r\n**********************************************************************\n");
-    printf("*********************WelCome to Shell Zilla***************************\n");
+    printf("***********Hi! My name is ShellZilla, your personal shell*************\n");
+    printf("***********(Enter commands to see what I can do for you)**************\n");
     printf("**********************************************************************\n");
+    printf("How can I help you? \n\n\n");
     return;
 }
 
