@@ -15,6 +15,24 @@
 #define PROMPT_LEN_MAX 1024
 
 
+/*get current folder name*/
+void funShellZillaGetCurFolder(char *pCwd, char *curFolder)
+{
+    char *p = NULL;
+    int len = 0;
+    
+    p = pCwd + strlen(pCwd);
+    /*find the last / from the directory*/
+    while(*p != '/')
+    {
+        len++;
+        p--;
+    }
+    memcpy(curFolder, p+1, len);
+    return;
+}
+
+
 int main()
 {
     char shellPrompt[PROMPT_LEN_MAX];
