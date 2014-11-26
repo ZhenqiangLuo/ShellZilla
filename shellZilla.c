@@ -156,12 +156,12 @@ void funShellZillaExcVer(char **argv)
     printf("*                     4.recording the previous command               *\n");
     printf("*                     5.indicating the authors                       *\n");
     printf("*                       and the version of this Shell                *\n");
-    printf("*                     6.listing all supported commands 				 *\n");
+    printf("*                     6.listing all supported commands 				 *");
     printf("*                     7.allowing user the exit the Shell             *\n");
     printf("*                     8.fixed some bugs                              *\n");
     printf("*author             : Tianqi Zhou, Wentao Xu                         *\n");
     printf("*                     Yuming Zhang, Zhenqiang Luo                    *\n");
-    printf("**********************************************************************\r\n");
+    printf("**********************************************************************\r\n\n");
     return;
 }
 
