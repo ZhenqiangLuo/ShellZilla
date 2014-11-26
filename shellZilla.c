@@ -40,6 +40,7 @@ char *supCmd[] =
     NULL
 };
 
+/*commands explaination*/
 char *supCmdExplain[] = 
 {
     "show current working directory.",
@@ -100,23 +101,6 @@ void funShellZillaReadLineIni()
 }
 
 
-
-void funShellZillaGetCurFolder(char *pCwd, char *curFolder)
-{
-    char *p = NULL;
-    int len = 0;
-    
-    p = pCwd + strlen(pCwd);
-    /*find the last / from the directory*/
-    while(*p != '/')
-    {
-        len++;
-        p--;
-    }
-    memcpy(curFolder, p+1, len);
-    return;
-}
-
 /*get current folder name*/
 void funShellZillaGetCurFolder(char *pCwd, char *curFolder)
 {
@@ -133,6 +117,7 @@ void funShellZillaGetCurFolder(char *pCwd, char *curFolder)
     memcpy(curFolder, p+1, len);
     return;
 }
+
 
 char *funShellZillaGetRidOfSpace(char *input)
 {
