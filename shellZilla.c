@@ -229,38 +229,6 @@ void funShellZillaExcCurDir(char **argv)
     return;
 }
 
-<<<<<<< HEAD
-void funShellZillaExcBuiltInBash(char **argv)
-{
-    pid_t pid;
-    pid = fork();
-    if(pid < 0)
-    {   
-        printf("fork child process failed\n");
-        return;
-    }
-    else if (pid == 0)
-    {
-        if (execvp(*argv, argv) < 0) 
-        {
-            printf("exec cmd failed\n");
-            return;
-        }
-    }
-    else
-    {
-        int wc = wait(NULL);
-        if (wc == ERROR)
-        {
-            printf("wait child failed\n");
-            return;
-        }
-    }
-    return;
-}
-
-=======
-
 /*funtion for command commands*/
 void funShellZillaExcCmd(char **argv)
 {
@@ -277,10 +245,6 @@ void funShellZillaExcCmd(char **argv)
     return;
 }
 
-
-<<<<<<< HEAD
->>>>>>> 00a168304f2527cb0d9ef07da370a2ddabbb5bf6
-=======
 void funShellZillaExcHis(char **argv)
 {
     char *pHistory = NULL;
@@ -299,8 +263,36 @@ void funShellZillaExcHis(char **argv)
     return;    
 }
 
+void funShellZillaExcBuiltInBash(char **argv)
+{
+    pid_t pid;
+    pid = fork();
+    if(pid < 0)
+    {
+        printf("fork child process failed\n");
+        return;
+    }
+    else if (pid == 0)
+    {
+        if (execvp(*argv, argv) < 0)
+        {
+            printf("exec cmd failed\n");
+            return;
+        }
+    }
+    else
+    {
+        int wc = wait(NULL);
+        if (wc == ERROR)
+        {
+            printf("wait child failed\n");
+            return;
+        }
+    }
+    return;
+}
 
->>>>>>> 21e4f21bc0b5fb88b725d2f0b0d542e27d875adb
+
 int main()
 {
     char shellPrompt[PROMPT_LEN_MAX];
