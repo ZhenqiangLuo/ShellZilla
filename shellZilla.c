@@ -18,6 +18,7 @@
 char *supCmd[] = 
 {
     "currentdir",
+    "ver",
     NULL
 };
 
@@ -60,6 +61,23 @@ char *funShellZillaGetRidOfSpace(char *input)
     *q = '\0';
     return p;
 }
+
+/*function for command ver*/
+void funShellZillaExcVer(char *pCmd, char *pParam)
+{
+    printf("\r\n**********************************************************************\n");
+    printf("**************************SHELL ZILLA*********************************\n");
+    printf("**********************************************************************\n");
+    printf("*current version    : 1.1                                            *\n");
+    printf("*feature description: 1.get current folder name                *\n");
+    printf("*                     2.shell version                  *\n");
+    printf("*                     3.                     *\n");
+    printf("*author             : Wentao Xu, Yuming Zhang, Zhenqing Luo         *\n");
+    printf("**********************************************************************\r\n");
+    return;
+}
+
+
 
 int main()
 {
