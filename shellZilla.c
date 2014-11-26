@@ -16,6 +16,23 @@
 
 
 
+/*command we now support*/
+char *supCmd[] = 
+{
+    "currentdir",
+    "ver",
+    "ls",
+    "cd",
+    "mkdir",
+    "rmdir",
+    "commands",
+    "history",
+    "quit",
+    NULL
+};
+
+
+
 int main()
 {
     char shellPrompt[PROMPT_LEN_MAX];
