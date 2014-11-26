@@ -90,7 +90,9 @@ void funShellZillaReadLineIni()
     return;
 }
 
-hellZillaGetCurFolder(char *pCwd, char *curFolder)
+
+
+void funShellZillaGetCurFolder(char *pCwd, char *curFolder)
 {
     char *p = NULL;
     int len = 0;
