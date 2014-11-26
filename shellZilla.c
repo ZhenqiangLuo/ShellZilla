@@ -340,6 +340,66 @@ void funShellZillaPrintWelCome()
     return;
 }
 
+void funShellZillaAddHistoryList(char *input)
+{
+    char *pHistory = NULL;
+    char *p = NULL;
+    int i = 0;
+
+    pHistory = (char *)malloc(strlen(input)+1);
+    if(NULL == pHistory)
+    {
+        return;
+    }
+    memset(pHistory, 0, strlen(input)+1);
+    strcpy(pHistory, input);
+    if(history.cnt < SHELL_HIS_CMD_CNT_MAX)
+    {
+        /*find a place and insert it*/
+        for(i=0; i<SHELL_HIS_CMD_CNT_MAX; i++)
+        {
+            if(history.historyArr[i] == NULL)
+            {
+                break;
+            }
+        }
+        history.historyArr[i] = pHistory;
+        history.cnt++;
+    }
+    else
+    {
+        /*delete the first record*/
+        /*record the first history command*/
+        p = history.historyArr[0];
+        for(i=1; i<SHELL_HIS_CMD_CNT_MAX; i++)
+        {
+            /*left move the history*/
+            history.historyArr[i-1] = history.historyArr[i];
+        }
+        history.historyArr[SHELL_HIS_CMD_CNT_MAX-1] = pHistory;
+        free(p);
+        p = NULL;
+    }
+    return;
+}
+
+void funShellZillaHistoryListFree()
+{
+    int i = 0;
+    char *p = NULL;
+    for(i=0; i<history.cnt; i++)
+    {
+        p = history.historyArr[i];
+        if(NULL != p)
+        {
+            free(p);
+            p = NULL;
+        }
+    }
+    memset(&history, 0, sizeof(history));
+    return;
+}
+
 
 int main()
 {
