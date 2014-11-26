@@ -40,11 +40,8 @@ char *supCmd[] =
     NULL
 };
 
-<<<<<<< HEAD
+
 /*command explanation*/
-=======
-/*commands explaination*/
->>>>>>> 5cf3b24ca4f4b2c182caa3300a1fea9bbefee0a0
 char *supCmdExplain[] = 
 {
     "show current working directory.",
@@ -281,7 +278,29 @@ void funShellZillaExcCmd(char **argv)
 }
 
 
+<<<<<<< HEAD
 >>>>>>> 00a168304f2527cb0d9ef07da370a2ddabbb5bf6
+=======
+void funShellZillaExcHis(char **argv)
+{
+    char *pHistory = NULL;
+    int index = 1;
+
+    for(index=0; index<history.cnt; index++)
+    {
+        pHistory = history.historyArr[index];
+        if(NULL == pHistory)
+        {
+            continue;
+        }
+        printf("%s\n", pHistory);
+    }
+        
+    return;    
+}
+
+
+>>>>>>> 21e4f21bc0b5fb88b725d2f0b0d542e27d875adb
 int main()
 {
     char shellPrompt[PROMPT_LEN_MAX];
