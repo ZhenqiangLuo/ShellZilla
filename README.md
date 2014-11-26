@@ -22,6 +22,6 @@ Usage
 
 Enter the following commands to run shellZilla
 
-make
+make \n
 
 ./shellZilla
