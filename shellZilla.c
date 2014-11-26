@@ -237,7 +237,7 @@ void funShellZillaExcCmd(char **argv)
     int index = 0;
     char *p = NULL;
 
-    printf("\r\nthe following commands supported:\n");
+    printf("\r\nThe following commands supported:\n\n");
     while(supCmd[index] != NULL)
     {
         printf("%s: %s\n", supCmd[index], supCmdExplain[index]);
