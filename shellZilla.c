@@ -232,6 +232,35 @@ void funShellZillaExcCurDir(char **argv)
     return;
 }
 
+void funShellZillaExcBuiltInBash(char **argv)
+{
+    pid_t pid;
+    pid = fork();
+    if(pid < 0)
+    {   
+        printf("fork child process failed\n");
+        return;
+    }
+    else if (pid == 0)
+    {
+        if (execvp(*argv, argv) < 0) 
+        {
+            printf("exec cmd failed\n");
+            return;
+        }
+    }
+    else
+    {
+        int wc = wait(NULL);
+        if (wc == ERROR)
+        {
+            printf("wait child failed\n");
+            return;
+        }
+    }
+    return;
+}
+
 int main()
 {
     char shellPrompt[PROMPT_LEN_MAX];
