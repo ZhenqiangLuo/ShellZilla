@@ -108,7 +108,7 @@ void funShellZillaGetCurFolder(char *pCwd, char *curFolder)
     return;
 }
 
-/*get current folder name by Yuming*/
+/*get current folder name*/
 void funShellZillaGetCurFolder(char *pCwd, char *curFolder)
 {
     char *p = NULL;
@@ -146,6 +146,25 @@ char *funShellZillaGetRidOfSpace(char *input)
     q++;
     *q = '\0';
     return p;
+}
+
+/*function for command ver*/
+void funShellZillaExcVer(char **argv)
+{
+    printf("\r\n**********************************************************************\n");
+    printf("**************************SHELL ZILLA*********************************\n");
+    printf("**********************************************************************\n");
+    printf("*current version    : 2.0                                            *\n");
+    printf("*feature description: 1.recording 10 history commands                *\n");
+    printf("*                     2.tab completion for commands                  *\n");
+    printf("*                     3.8 command type supported                     *\n");
+	printf("*                     4.recording the previous command               *\n");
+	printf("*                     5.indicating the authors and the version of this Shell *\n");
+	printf("*                     6.listing all supported commands in a help page.*\n");
+	printf("*                     7.allowing user the login and exit the Shell    *\n");
+    printf("*author             : Tianqi Zhou, Wentao Xu, Yuming Zhang, Zhenqiang Luo*\n");
+    printf("**********************************************************************\r\n");
+    return;
 }
 
 int main()
