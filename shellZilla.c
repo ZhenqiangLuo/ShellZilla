@@ -45,6 +45,45 @@ char *supCmdExplain[] =
     NULL
 };
 
+
+/*for command tab completion*/
+char *funShellZillaCmdGen(const char *text, int state)
+{
+    const char *name;
+    static int list_index, len;
+
+    if (!state)
+    {
+        list_index = 0;
+        len = strlen (text);
+    }
+
+    while ((supCmd[list_index] != NULL) && (name = supCmd[list_index]))
+    {
+        list_index++;
+        if (strncmp (name, text, len) == 0)
+        {
+            return strdup(name);
+        }
+    }
+
+    return ((char *)NULL);   
+}
+
+char** funShellZillaCmdCompletion(const char* text, int start, int end)
+{
+    char **matches;  
+  
+    matches = (char **) NULL;  
+    if (start == 0)  
+    {
+        matches = rl_completion_matches(text, funShellZillaCmdGen); 
+    }
+  
+    return matches;
+}
+
+
 int main()
 {
     char shellPrompt[PROMPT_LEN_MAX];
