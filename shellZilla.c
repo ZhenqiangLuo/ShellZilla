@@ -154,11 +154,12 @@ void funShellZillaExcVer(char **argv)
     printf("*                     2.tab completion for commands                  *\n");
     printf("*                     3.8 command type supported                     *\n");
     printf("*                     4.recording the previous command               *\n");
-    printf("*                     5.indicating the authors and the version of this Shell *\n");
-    printf("*                     6.listing all supported commands in a help page.*\n");
-    printf("*                     7.allowing user the login and exit the Shell    *\n");
-    printf("*                     8.fixed some bugs    *\n");
-    printf("*author             : Tianqi Zhou, Wentao Xu, Yuming Zhang, Zhenqiang Luo*\n");
+    printf("*                     5.indicating the authors and the version of this Shell \n");
+    printf("*                     6.listing all supported commands in a help page.\n");
+    printf("*                     7.allowing user the login and exit the Shell    \n");
+    printf("*                     8.fixed some bugs                              *\n");
+    printf("*author             : Tianqi Zhou, Wentao Xu                         *\n");
+    printf("*                     Yuming Zhang, Zhenqiang Luo                    *\n");
     printf("**********************************************************************\r\n");
     return;
 }
@@ -225,6 +226,7 @@ void funShellZillaExcCurDir(char **argv)
     char cwd[PATH_LEN_MAX];
     memset(cwd, 0, sizeof(cwd));
     getcwd(cwd, sizeof(cwd));
+    printf("Your current working directory is: \n");
     printf("%s\n", cwd);
     return;
 }
