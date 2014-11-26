@@ -100,7 +100,10 @@ void funShellZillaReadLineIni()
     return;
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8028d38f7741ba43d8817c08cd2dfe41ebfee540
 /*get current folder name*/
 void funShellZillaGetCurFolder(char *pCwd, char *curFolder)
 {
