@@ -108,7 +108,7 @@ void funShellZillaGetCurFolder(char *pCwd, char *curFolder)
     return;
 }
 
-/*get current folder name*/
+/*get current folder name by Yuming*/
 void funShellZillaGetCurFolder(char *pCwd, char *curFolder)
 {
     char *p = NULL;
