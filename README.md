@@ -15,3 +15,11 @@ Tianqi Zhou
 Yuming Zhang  
 
 Zhenqiang Luo  
+
+
+Usage
+--------------------------
+
+Enter the following command to run shellZilla
+
+./shellZilla
