@@ -1,4 +1,3 @@
-
 shellZilla:        shellZilla.o
 	cc -o shellZilla shellZilla.o -I/usr/include -lreadline -ltermcap
 
