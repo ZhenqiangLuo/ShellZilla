@@ -51,7 +51,7 @@ char *supCmdExplain[] =
     "built-in command mkdir in bash.",
     "built-in command rmdir in bash.",
     "show all the commands that I support.",
-    "show the history commands",
+    "show the history commands.",
     "quit me.",
     NULL
 };
@@ -238,7 +238,7 @@ void funShellZillaExcCmd(char **argv)
     int index = 0;
     char *p = NULL;
 
-    printf("\r\nThe following commands supported:\n\n");
+    printf("\r\nThe following commands are supported:\n\n");
     while(supCmd[index] != NULL)
     {
         printf("%s: %s\n", supCmd[index], supCmdExplain[index]);
