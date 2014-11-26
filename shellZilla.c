@@ -227,6 +227,24 @@ void funShellZillaExcCurDir(char **argv)
     return;
 }
 
+
+/*funtion for command commands*/
+void funShellZillaExcCmd(char **argv)
+{
+    int index = 0;
+    char *p = NULL;
+
+    printf("\r\nthe following commands supported:\n");
+    while(supCmd[index] != NULL)
+    {
+        printf("%s: %s\n", supCmd[index], supCmdExplain[index]);
+        index++;
+    }
+    printf("\r\n");
+    return;
+}
+
+
 int main()
 {
     char shellPrompt[PROMPT_LEN_MAX];
