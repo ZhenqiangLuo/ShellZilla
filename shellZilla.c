@@ -14,6 +14,12 @@
 #define PATH_LEN_MAX 1024
 #define PROMPT_LEN_MAX 1024
 
+/*command we now support*/
+char *supCmd[] = 
+{
+    "currentdir",
+    NULL
+};
 
 /*get current folder name*/
 void funShellZillaGetCurFolder(char *pCwd, char *curFolder)
