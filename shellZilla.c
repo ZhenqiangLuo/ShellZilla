@@ -40,7 +40,11 @@ char *supCmd[] =
     NULL
 };
 
+<<<<<<< HEAD
+/*command explanation*/
+=======
 /*commands explaination*/
+>>>>>>> 5cf3b24ca4f4b2c182caa3300a1fea9bbefee0a0
 char *supCmdExplain[] = 
 {
     "show current working directory.",
@@ -148,14 +152,15 @@ void funShellZillaExcVer(char **argv)
     printf("\r\n**********************************************************************\n");
     printf("**************************SHELL ZILLA*********************************\n");
     printf("**********************************************************************\n");
-    printf("*current version    : 2.0                                            *\n");
+    printf("*current version    : 2.1                                            *\n");
     printf("*feature description: 1.recording 10 history commands                *\n");
     printf("*                     2.tab completion for commands                  *\n");
     printf("*                     3.8 command type supported                     *\n");
-	printf("*                     4.recording the previous command               *\n");
-	printf("*                     5.indicating the authors and the version of this Shell *\n");
-	printf("*                     6.listing all supported commands in a help page.*\n");
-	printf("*                     7.allowing user the login and exit the Shell    *\n");
+    printf("*                     4.recording the previous command               *\n");
+    printf("*                     5.indicating the authors and the version of this Shell *\n");
+    printf("*                     6.listing all supported commands in a help page.*\n");
+    printf("*                     7.allowing user the login and exit the Shell    *\n");
+    printf("*                     8.fixed some bugs    *\n");
     printf("*author             : Tianqi Zhou, Wentao Xu, Yuming Zhang, Zhenqiang Luo*\n");
     printf("**********************************************************************\r\n");
     return;
