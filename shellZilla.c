@@ -90,7 +90,44 @@ void funShellZillaReadLineIni()
     return;
 }
 
+hellZillaGetCurFolder(char *pCwd, char *curFolder)
+{
+    char *p = NULL;
+    int len = 0;
+    
+    p = pCwd + strlen(pCwd);
+    /*find the last / from the directory*/
+    while(*p != '/')
+    {
+        len++;
+        p--;
+    }
+    memcpy(curFolder, p+1, len);
+    return;
+}
 
+char *funShellZillaGetRidOfSpace(char *input)
+{
+    char *p = NULL;
+    char *q = NULL;
+
+    p = input;
+    /*find the first char that is not whitespace*/
+    while(*p == ' ')
+    {
+        p++;
+    }
+
+    /*get rid of the white space at the end*/
+    q = input+strlen(input)-1;
+    while(*q == ' ')
+    {
+        q--;
+    }
+    q++;
+    *q = '\0';
+    return p;
+}
 
 int main()
 {
