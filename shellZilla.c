@@ -167,6 +167,31 @@ void funShellZillaExcVer(char **argv)
     return;
 }
 
+
+
+
+/*if the command input not in supCmd, it is invalid,else valid*/
+int funShellZillaIsValidCmd(char *input)
+{
+    char *p = NULL;
+    int index = 0;
+    int flag = 0;
+    
+    while(supCmd[index] != NULL)
+    {
+        p = supCmd[index];
+        if(strncmp(p, input, strlen(p)) == 0)
+        {
+            flag = 1;
+            break;
+        }
+        index++;
+    }
+    return flag;
+}
+
+
+
 int main()
 {
     char shellPrompt[PROMPT_LEN_MAX];
