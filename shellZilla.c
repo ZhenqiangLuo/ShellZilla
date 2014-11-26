@@ -15,6 +15,15 @@
 #define PROMPT_LEN_MAX 1024
 
 
+/*history array*/
+typedef struct _stShellHistory_
+{
+    int cnt;/*history count max 10*/
+    char *historyArr[SHELL_HIS_CMD_CNT_MAX]; 
+}stShellHistory;
+stShellHistory history;
+
+
 
 /*command we now support*/
 char *supCmd[] = 
@@ -148,6 +157,64 @@ void funShellZillaExcVer(char **argv)
     printf("**********************************************************************\r\n");
     return;
 }
+
+
+
+
+/*if the command input not in supCmd, it is invalid,else valid*/
+int funShellZillaIsValidCmd(char *input)
+{
+    char *p = NULL;
+    int index = 0;
+    int flag = 0;
+    
+    while(supCmd[index] != NULL)
+    {
+        p = supCmd[index];
+        if(strncmp(p, input, strlen(p)) == 0)
+        {
+            flag = 1;
+            break;
+        }
+        index++;
+    }
+    return flag;
+}
+
+
+
+/*according to input,get the command name and parameter*/
+void funShellZillaParse(char *input, char **argv)
+{
+    char *p = NULL;
+
+    p = input;
+    while (*p != '\0')
+    {
+        while ((*p == ' ') 
+            || (*p == '\t') 
+            || (*p == '\n')) 
+        {
+            /*if white space,tab,or newline encountered，one command finish*/
+            *p = '\0';
+            p++;
+        }
+        // save the position of argument
+        *argv = p;
+        argv++;
+        while((*p != '\0' )
+                && (*p != ' ') 
+                && (*p != '\t') 
+                && (*p != '\n'))
+        {
+            p++;
+        }
+    }
+    *argv = (char *) '\0';    
+    return;
+}
+
+
 
 int main()
 {
