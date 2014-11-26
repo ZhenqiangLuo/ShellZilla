@@ -15,6 +15,15 @@
 #define PROMPT_LEN_MAX 1024
 
 
+/*history array*/
+typedef struct _stShellHistory_
+{
+    int cnt;/*history count max 10*/
+    char *historyArr[SHELL_HIS_CMD_CNT_MAX]; 
+}stShellHistory;
+stShellHistory history;
+
+
 
 /*command we now support*/
 char *supCmd[] = 
